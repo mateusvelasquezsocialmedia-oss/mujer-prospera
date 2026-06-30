@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mujer Próspera — Guía de 21 Días | Libertad Financiera con Fe</title>
+<meta name="description" content="Un plan de 21 días para transformar tus finanzas con fe, sabiduría y propósito. Inspirada en la mujer de Proverbios 31. Acceso inmediato.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#5B1A33;
+    --wine-deep:#3E0F22;
+    --rose:#C98A7A;
+    --gold:#C9A24B;
+    --gold-soft:#D9BE7E;
+    --cream:#F6EEE7;
+    --cream-deep:#EFE3D8;
+    --ink:#2A1118;
+    --muted:#6E5159;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Jost',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.7;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.12;letter-spacing:.01em}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-family:'Jost',sans-serif;font-weight:500;font-size:.72rem;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(120% 90% at 80% 10%, rgba(201,162,75,.18), transparent 55%),
+      linear-gradient(160deg, var(--wine) 0%, var(--wine-deep) 100%);
+    color:var(--cream);
+    padding:64px 0 76px;
+    position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(60% 50% at 50% 120%, rgba(201,138,122,.25), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;position:relative;z-index:1}
+  .hero .eyebrow{color:var(--gold-soft)}
+  .hero h1{
+    font-size:clamp(2.5rem,5.4vw,4.1rem);color:#fff;margin:18px 0 20px;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-soft);font-weight:500}
+  .hero p.lead{font-size:1.12rem;color:#EBD9D0;font-weight:300;max-width:30em;margin-bottom:30px}
+  .book{
+    width:100%;max-width:360px;margin:0 auto;display:block;
+    border-radius:8px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06);
+    transform:rotate(-2deg);
+    transition:transform .5s ease;
+  }
+  .book:hover{transform:rotate(0deg) scale(1.02)}
+  .book-frame{position:relative}
+  .book-frame::before{
+    content:"";position:absolute;inset:-8% -6% -10% -6%;
+    background:radial-gradient(closest-side, rgba(201,162,75,.35), transparent 70%);
+    z-index:0;
+  }
+  .book{position:relative;z-index:1}
+
+  /* ---------- CTA BUTTON ---------- */
+  .cta{
+    display:inline-flex;align-items:center;gap:12px;
+    background:linear-gradient(135deg,var(--gold) 0%,var(--gold-soft) 100%);
+    color:var(--wine-deep);
+    font-family:'Jost',sans-serif;font-weight:600;font-size:1.02rem;
+    letter-spacing:.04em;text-transform:uppercase;text-decoration:none;
+    padding:18px 38px;border-radius:50px;
+    box-shadow:0 14px 30px -10px rgba(201,162,75,.6);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cta:hover{transform:translateY(-3px);box-shadow:0 20px 40px -10px rgba(201,162,75,.75)}
+  .cta:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  .cta .arrow{font-size:1.1em;transition:transform .2s}
+  .cta:hover .arrow{transform:translateX(4px)}
+  .cta-note{display:block;margin-top:14px;font-size:.82rem;color:#D9C2B8;letter-spacing:.04em}
+  .hero .cta-note{color:#D9C2B8}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:78px 0}
+  .pain{background:var(--cream)}
+  .pain .inner{max-width:760px;margin:0 auto;text-align:center}
+  .pain h2{font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--wine);margin:14px 0 26px}
+  .pain p{font-size:1.12rem;color:var(--muted);margin-bottom:18px}
+  .pain .verse{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:1.5rem;color:var(--wine);line-height:1.4;
+    max-width:24em;margin:34px auto 0;position:relative;
+  }
+  .pain .verse cite{display:block;font-style:normal;font-family:'Jost';font-weight:500;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:14px}
+
+  /* ---------- BENEFITS ---------- */
+  .benefits{background:linear-gradient(180deg,var(--cream-deep),var(--cream))}
+  .benefits .head{text-align:center;max-width:620px;margin:0 auto 50px}
+  .benefits h2{font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--wine);margin-top:12px}
+  .blist{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(91,26,51,.1);border:1px solid rgba(91,26,51,.12);border-radius:14px;overflow:hidden}
+  .bitem{background:var(--cream);padding:30px 28px;display:flex;gap:16px;align-items:flex-start}
+  .bitem .num{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--gold);line-height:1;min-width:1.4em}
+  .bitem p{font-size:1rem;color:var(--ink);font-weight:400}
+  .bitem strong{color:var(--wine);font-weight:600}
+
+  /* ---------- HOW (21 days) ---------- */
+  .how{background:var(--wine);color:var(--cream);text-align:center}
+  .how h2{color:#fff;font-size:clamp(1.9rem,3.6vw,2.7rem);margin-top:12px}
+  .how .eyebrow{color:var(--gold-soft)}
+  .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+  .step{padding:0 14px}
+  .step .ic{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--gold-soft);font-style:italic}
+  .step h3{color:#fff;font-size:1.35rem;margin:10px 0 8px}
+  .step p{color:#E7D2C9;font-size:.98rem;font-weight:300}
+
+  /* ---------- OFFER ---------- */
+  .offer{background:var(--cream);text-align:center}
+  .card{
+    max-width:520px;margin:0 auto;background:#fff;
+    border:1px solid rgba(91,26,51,.14);border-radius:20px;
+    padding:50px 40px;box-shadow:0 30px 60px -30px rgba(91,26,51,.35);
+    position:relative;overflow:hidden;
+  }
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--gold),var(--rose),var(--wine))}
+  .card .eyebrow{color:var(--gold)}
+  .card .price{font-family:'Cormorant Garamond',serif;font-size:4.2rem;font-weight:700;color:var(--wine);line-height:1;margin:8px 0 4px}
+  .card .price small{font-size:1.4rem;font-weight:500;vertical-align:super}
+  .card .once{font-size:.9rem;color:var(--muted);letter-spacing:.05em;margin-bottom:28px}
+  .card ul{list-style:none;text-align:left;margin:0 auto 30px;max-width:330px}
+  .card li{padding:8px 0 8px 30px;position:relative;font-size:1rem;color:var(--ink);font-weight:400}
+  .card li::before{content:"✦";position:absolute;left:0;color:var(--gold);font-size:.9em}
+  .secure{margin-top:18px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- GUARANTEE ---------- */
+  .guarantee{background:var(--cream-deep);text-align:center}
+  .seal{
+    width:120px;height:120px;margin:0 auto 24px;border-radius:50%;
+    border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--wine);
+    font-size:1.05rem;line-height:1.1;text-align:center;
+    background:radial-gradient(closest-side,#fff,var(--cream));
+    box-shadow:0 10px 30px -12px rgba(201,162,75,.5);
+  }
+  .seal b{font-size:2.2rem;font-style:normal;display:block;color:var(--gold)}
+  .guarantee h2{font-size:clamp(1.7rem,3.2vw,2.3rem);color:var(--wine);margin-bottom:14px}
+  .guarantee p{max-width:30em;margin:0 auto;color:var(--muted);font-size:1.08rem}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--cream)}
+  .faq h2{text-align:center;font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--wine);margin-bottom:42px}
+  .faq .q{border-bottom:1px solid rgba(91,26,51,.16);max-width:760px;margin:0 auto}
+  .faq details{padding:22px 4px}
+  .faq summary{
+    font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--wine);
+    cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-family:'Jost';font-weight:300;font-size:1.6rem;color:var(--gold);transition:transform .25s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{margin-top:14px;color:var(--muted);font-size:1.02rem;max-width:62ch}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{
+    background:linear-gradient(160deg,var(--wine) 0%,var(--wine-deep) 100%);
+    color:var(--cream);text-align:center;padding:90px 0;
+  }
+  .final h2{color:#fff;font-size:clamp(2rem,4vw,3rem);margin-bottom:16px}
+  .final h2 em{font-style:italic;color:var(--gold-soft);font-weight:500}
+  .final p{color:#E7D2C9;font-size:1.1rem;margin-bottom:34px;max-width:30em;margin-left:auto;margin-right:auto;font-weight:300}
+
+  footer{background:var(--wine-deep);color:#B89AA4;text-align:center;padding:30px 24px;font-size:.82rem;letter-spacing:.03em}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:840px){
+    .hero-grid{grid-template-columns:1fr;gap:40px;text-align:center}
+    .hero p.lead{margin-left:auto;margin-right:auto}
+    .blist{grid-template-columns:1fr}
+    .how-steps{grid-template-columns:1fr;gap:36px}
+    .book{max-width:280px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto}
+    .book{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Guía de 21 Días · Finanzas con Fe</span>
+      <h1>Mujer, fuiste diseñada para <em>prosperar con propósito</em>.</h1>
+      <p class="lead">Un plan diario con enseñanza bíblica, acción práctica y oración para administrar tus finanzas con fe, salir de deudas y vivir con libertad. Inspirada en la mujer de Proverbios 31.</p>
+      <a class="cta" href="https://go.hotmart.com/X106549735Y">Quiero empezar mis 21 días <span class="arrow">→</span></a>
+      <span class="cta-note">Acceso inmediato · Garantía de 7 días · Pago único</span>
+    </div>
+    <div class="book-frame">
+      <img class="book" src="cover.jpeg" alt="Portada del ebook Mujer Próspera — Guía de 21 Días">
+    </div>
+  </div>
+</header>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="wrap inner">
+    <span class="eyebrow">¿Te suena familiar?</span>
+    <h2>Las cuentas te quitan el sueño. Sientes que nunca alcanza.</h2>
+    <p>Despiertas de madrugada pensando en el dinero. El mes empieza y ya estás contando lo que falta. Vives con la sensación de que la angustia financiera nunca termina.</p>
+    <p>Pero Dios no te creó para vivir con miedo del dinero. Él te diseñó con la capacidad de administrar, generar, multiplicar y bendecir.</p>
+    <blockquote class="verse">
+      «Considera una heredad y la compra... ve que van bien sus negocios... y se ríe de lo por venir.»
+      <cite>Proverbios 31</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Lo que vas a aprender</span>
+      <h2>Sabiduría bíblica que transforma tus finanzas</h2>
+    </div>
+    <div class="blist">
+      <div class="bitem"><span class="num">01</span><p>Cómo <strong>salir de las deudas</strong> paso a paso, sin angustia.</p></div>
+      <div class="bitem"><span class="num">02</span><p>El principio de las <strong>primicias</strong> y la provisión de Dios.</p></div>
+      <div class="bitem"><span class="num">03</span><p>Cómo construir tu <strong>reserva</strong> y reírte del futuro como la mujer sabia.</p></div>
+      <div class="bitem"><span class="num">04</span><p>El secreto del <strong>contentamiento</strong> frente a la comparación.</p></div>
+      <div class="bitem"><span class="num">05</span><p>Cómo <strong>administrar, generar y multiplicar</strong> con propósito.</p></div>
+      <div class="bitem"><span class="num">06</span><p>Un <strong>capítulo especial</strong> sobre la Mujer de Proverbios 31 y el dinero.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="how">
+  <div class="wrap">
+    <span class="eyebrow">Cómo funciona</span>
+    <h2>Veintiún días. Un paso cada día.</h2>
+    <div class="how-steps">
+      <div class="step">
+        <div class="ic">I</div>
+        <h3>Una enseñanza</h3>
+        <p>Cada día abres un principio bíblico claro sobre el dinero, explicado para tu vida real.</p>
+      </div>
+      <div class="step">
+        <div class="ic">II</div>
+        <h3>Una acción</h3>
+        <p>Una tarea práctica para ese mismo día. Porque la transformación ocurre haciendo, no solo leyendo.</p>
+      </div>
+      <div class="step">
+        <div class="ic">III</div>
+        <h3>Una oración</h3>
+        <p>Entregas a Dios cada área de tus finanzas y caminas con paz, un día a la vez.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer">
+  <div class="wrap">
+    <div class="card">
+      <span class="eyebrow">Acceso inmediato</span>
+      <div class="price"><small>US$</small> 9,90</div>
+      <div class="once">Pago único · El contenido es tuyo para siempre</div>
+      <ul>
+        <li>Guía completa de 21 días en PDF</li>
+        <li>Capítulo especial: Proverbios 31</li>
+        <li>21 enseñanzas, acciones y oraciones</li>
+        <li>Léelo en celular, tablet o computadora</li>
+      </ul>
+      <a class="cta" href="https://go.hotmart.com/X106549735Y">Comprar ahora <span class="arrow">→</span></a>
+      <div class="secure">Pago 100% seguro · Garantía de 7 días</div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="wrap">
+    <div class="seal"><span><b>7</b>días</span></div>
+    <h2>Garantía incondicional</h2>
+    <p>Si en 7 días sientes que este libro no es para ti, te devolvemos todo tu dinero, sin preguntas. El riesgo es nuestro; la transformación es tuya.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <h2>Preguntas frecuentes</h2>
+    <div class="q"><details><summary>¿Para quién es este producto?</summary><p>Para mujeres de fe que quieren administrar su dinero con sabiduría bíblica, salir de deudas y vivir con libertad y paz financiera, un día a la vez.</p></details></div>
+    <div class="q"><details><summary>¿El pago es único o es una suscripción?</summary><p>Es un pago único. Pagas una sola vez y el contenido es tuyo para siempre, con acceso inmediato y garantía de 7 días.</p></details></div>
+    <div class="q"><details><summary>¿Cómo recibo el ebook?</summary><p>Recibirás el acceso por email apenas confirmes tu compra. Puedes leerlo o descargarlo desde tu celular, tablet o computadora, cuando quieras.</p></details></div>
+    <div class="q"><details><summary>¿Cómo funciona la garantía?</summary><p>Tienes 7 días para pedir el reembolso integral del valor pagado si el producto no te satisface. Sin preguntas.</p></details></div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow">Tu camino empieza hoy</span>
+    <h2>No necesitas permiso para ser <em>próspera con propósito</em>.</h2>
+    <p>Lo que necesitas es empezar. Y ya estás aquí.</p>
+    <a class="cta" href="https://go.hotmart.com/X106549735Y">Quiero mi ejemplar ahora <span class="arrow">→</span></a>
+    <span class="cta-note">Acceso inmediato · Garantía de 7 días · Pago único</span>
+  </div>
+</section>
+
+<footer>
+  Mujer Próspera Según Dios · Finanzas con fe y propósito · © 2026
+</footer>
+
+</body>
+</html>
